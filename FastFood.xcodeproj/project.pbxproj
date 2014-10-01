@@ -16,6 +16,7 @@
 		7619D29B19D9BBAC00520B88 /* FastFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619D29A19D9BBAC00520B88 /* FastFoodTests.swift */; };
 		7619D2A919D9C41C00520B88 /* ReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619D2A819D9C41C00520B88 /* ReceiptCell.swift */; };
 		7619D2AB19D9C43400520B88 /* NutritionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619D2AA19D9C43400520B88 /* NutritionCell.swift */; };
+		76A49D6A19DC410F006091F3 /* FastFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A49D6919DC410F006091F3 /* FastFood.swift */; };
 		76B2F4B519DB0193009077F2 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2F4B419DB0193009077F2 /* DatabaseConnection.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		7619D29A19D9BBAC00520B88 /* FastFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastFoodTests.swift; sourceTree = "<group>"; };
 		7619D2A819D9C41C00520B88 /* ReceiptCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptCell.swift; sourceTree = "<group>"; };
 		7619D2AA19D9C43400520B88 /* NutritionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionCell.swift; sourceTree = "<group>"; };
+		76A49D6919DC410F006091F3 /* FastFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastFood.swift; sourceTree = "<group>"; };
 		76B2F4B419DB0193009077F2 /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				7619D2A819D9C41C00520B88 /* ReceiptCell.swift */,
 				7619D2AA19D9C43400520B88 /* NutritionCell.swift */,
 				76B2F4B419DB0193009077F2 /* DatabaseConnection.swift */,
+				76A49D6919DC410F006091F3 /* FastFood.swift */,
 			);
 			path = FastFood;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				7619D28519D9BBAC00520B88 /* AppDelegate.swift in Sources */,
 				7619D2AB19D9C43400520B88 /* NutritionCell.swift in Sources */,
 				7619D2A919D9C41C00520B88 /* ReceiptCell.swift in Sources */,
+				76A49D6A19DC410F006091F3 /* FastFood.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
