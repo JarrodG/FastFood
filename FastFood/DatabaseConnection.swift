@@ -23,8 +23,8 @@ class DataConnection {
         var rowsArray = dataDictionary!["rows"]
         
         for oranges in rowsArray as NSArray{
-            println(oranges)
-            var databaseString:String = "http://100100.201.76:5984/mcdonalds/"
+            var databaseString:String = "http://10.100.201.76:5984/mcdonalds/"
+            var finalString = ""
             if let id: AnyObject? = oranges["id"]{
                 databaseString += id as String
                 databaseString += "/"
@@ -44,10 +44,12 @@ class DataConnection {
                 for (imageNames, imageData) in sandwichName {
                     
                     databaseString += imageNames as String
-                    println(databaseString)
+                    finalString = databaseString.stringByReplacingOccurrencesOfString(" ", withString: "%20", options: NSStringCompareOptions.LiteralSearch, range: nil)
+                    println(finalString)
+                    
                     //resultDictionary[sandwichName![0] as String] = databaseString
                 }
-                var foodItem = FastFood(calories: calories, category: category, fat: fat, image: databaseString, name: name, sodium: sodium, sugar: sugar)
+                var foodItem = FastFood(calories: calories, category: category, fat: fat, image: finalString, name: name, sodium: sodium, sugar: sugar)
                 resultArray.append(foodItem)
             }
             

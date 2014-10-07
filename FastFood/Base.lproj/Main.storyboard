@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,66 +17,132 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FyZ-aY-Mam">
-                                <rect key="frame" x="531" y="0.0" width="493" height="388"/>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FyZ-aY-Mam">
+                                <rect key="frame" x="531" y="0.0" width="493" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ptv-7K-IRv" customClass="ReceiptCell" customModule="FastFood" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="receiptCell" id="Ptv-7K-IRv" customClass="receiptCell" customModule="FastFood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="493" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ptv-7K-IRv" id="ZME-QK-EqX">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Uqc-O1-aVU">
+                                                    <rect key="frame" x="8" y="14" width="312" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemName" destination="Uqc-O1-aVU" id="NAp-Du-dUZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IAb-iA-AKi"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hNK-Ss-9ty"/>
+                                </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bnk-qr-PhA">
+                            <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bnk-qr-PhA">
                                 <rect key="frame" x="531" y="396" width="493" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="t3r-ky-28G" customClass="NutritionCell" customModule="FastFood" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="graphCell" rowHeight="129" id="t3r-ky-28G" customClass="graphCell" customModule="FastFood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="493" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t3r-ky-28G" id="JuY-ku-f8v">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpB-uu-s9A" customClass="NutritionGraphs" customModule="FastFood" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="29" width="493" height="99"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100% Daily Intake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNf-rv-MXW">
+                                                            <rect key="frame" x="19" y="64" width="140" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="percentage">
+                                                            <real key="value" value="100"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrV-ya-yIs">
+                                                    <rect key="frame" x="8" y="10" width="477" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="graphView" destination="wpB-uu-s9A" id="REg-8B-yab"/>
+                                            <outlet property="nutritionName" destination="MrV-ya-yIs" id="l8x-pI-5ok"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="acr-EF-kcR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Gi0-Ed-9Pp"/>
+                                </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FkM-Ft-1ds">
-                                <rect key="frame" x="0.0" y="0.0" width="523" height="768"/>
+                                <rect key="frame" x="0.0" y="100" width="523" height="668"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N4b-wA-FT9">
                                     <size key="itemSize" width="100" height="100"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="a4N-Ak-dEX" customClass="foodCell" customModule="FastFood" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="a4N-Ak-dEX" customClass="foodCell" customModule="FastFood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngt-Iw-ECz">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngt-Iw-ECz">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKm-op-84p">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="78"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCo-e2-bgZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nCo-e2-bgZ">
                                                             <rect key="frame" x="0.0" y="79" width="100" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="akJ-0O-Pkq"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DKm-op-84p">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="78"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="nCo-e2-bgZ" firstAttribute="top" secondItem="DKm-op-84p" secondAttribute="bottom" constant="1" id="4LH-lI-R1p"/>
+                                                        <constraint firstItem="nCo-e2-bgZ" firstAttribute="leading" secondItem="ngt-Iw-ECz" secondAttribute="leading" id="M4U-kK-n19"/>
+                                                        <constraint firstAttribute="bottom" secondItem="nCo-e2-bgZ" secondAttribute="bottom" id="TiZ-gi-EtQ"/>
+                                                        <constraint firstItem="DKm-op-84p" firstAttribute="leading" secondItem="ngt-Iw-ECz" secondAttribute="leading" id="iL4-JX-q0X"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nCo-e2-bgZ" secondAttribute="trailing" id="kvX-17-Yo8"/>
+                                                        <constraint firstItem="DKm-op-84p" firstAttribute="top" secondItem="ngt-Iw-ECz" secondAttribute="top" id="u5k-dj-N5A"/>
+                                                        <constraint firstAttribute="trailing" secondItem="DKm-op-84p" secondAttribute="trailing" id="ymZ-9H-5On"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ngt-Iw-ECz" secondAttribute="trailing" constant="-8" id="2Vs-ZE-MoA"/>
+                                            <constraint firstItem="ngt-Iw-ECz" firstAttribute="leading" secondItem="a4N-Ak-dEX" secondAttribute="leadingMargin" constant="-8" id="HKp-20-wNi"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ngt-Iw-ECz" secondAttribute="bottom" constant="-8" id="Ud3-fO-9ET"/>
+                                            <constraint firstItem="ngt-Iw-ECz" firstAttribute="top" secondItem="a4N-Ak-dEX" secondAttribute="topMargin" constant="-8" id="VZp-rA-2F5"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="foodImage" destination="DKm-op-84p" id="1YM-Yb-FtB"/>
                                             <outlet property="foodLabel" destination="nCo-e2-bgZ" id="2mh-yW-Rl2"/>
@@ -83,20 +150,95 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="gNZ-18-Chr" customClass="CollectionHeader" customModule="FastFood" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="523" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQC-lZ-gWu">
+                                            <rect key="frame" x="8" y="14" width="507" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <outlet property="headerLabel" destination="XQC-lZ-gWu" id="3oC-VO-8gb"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="xMd-jY-zT1"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="kN2-te-b72"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5r-UZ-9tE">
+                                <rect key="frame" x="16" y="28" width="78" height="51"/>
+                                <state key="normal" backgroundImage="saltShaker"/>
+                                <connections>
+                                    <action selector="saltButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssn-Ik-oUk"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="qOc-o1-jDq">
+                                <rect key="frame" x="250" y="374" width="20" height="20"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lO-yV-h92">
+                                <rect key="frame" x="311" y="28" width="78" height="51"/>
+                                <state key="normal" backgroundImage="butter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="butterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFN-GF-gug"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBx-5F-4mv">
+                                <rect key="frame" x="445" y="28" width="78" height="51"/>
+                                <state key="normal" backgroundImage="fire">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="caloriesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3fj-W3-RGW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXy-Hq-GB9">
+                                <rect key="frame" x="167" y="28" width="78" height="51"/>
+                                <state key="normal" backgroundImage="Sugar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sugarButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D1O-yt-UcD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-Cm-Fuy">
+                                <rect key="frame" x="754" y="369" width="40" height="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBG-eC-Pv4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="activity" destination="qOc-o1-jDq" id="jLv-jv-p9t"/>
+                        <outlet property="collectionView" destination="FkM-Ft-1ds" id="BqT-u0-hVt"/>
+                        <outlet property="graphTableView" destination="Bnk-qr-PhA" id="zJn-GB-mh5"/>
+                        <outlet property="receiptTableView" destination="FyZ-aY-Mam" id="Ym2-KO-Dpt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="137"/>
+            <point key="canvasLocation" x="33" y="156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Sugar" width="480" height="320"/>
+        <image name="butter" width="345" height="252"/>
+        <image name="fire" width="300" height="300"/>
+        <image name="saltShaker" width="800" height="577"/>
+    </resources>
 </document>

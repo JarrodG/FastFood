@@ -14,8 +14,7 @@
 		7619D28C19D9BBAC00520B88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7619D28B19D9BBAC00520B88 /* Images.xcassets */; };
 		7619D28F19D9BBAC00520B88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7619D28D19D9BBAC00520B88 /* LaunchScreen.xib */; };
 		7619D29B19D9BBAC00520B88 /* FastFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619D29A19D9BBAC00520B88 /* FastFoodTests.swift */; };
-		7619D2A919D9C41C00520B88 /* ReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619D2A819D9C41C00520B88 /* ReceiptCell.swift */; };
-		7619D2AB19D9C43400520B88 /* NutritionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619D2AA19D9C43400520B88 /* NutritionCell.swift */; };
+		766040EA19E432E900AB3BF8 /* NutritionGraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766040E919E432E900AB3BF8 /* NutritionGraphs.swift */; };
 		76A49D6A19DC410F006091F3 /* FastFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A49D6919DC410F006091F3 /* FastFood.swift */; };
 		76B2F4B519DB0193009077F2 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2F4B419DB0193009077F2 /* DatabaseConnection.swift */; };
 /* End PBXBuildFile section */
@@ -42,8 +41,7 @@
 		7619D29419D9BBAC00520B88 /* FastFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7619D29919D9BBAC00520B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7619D29A19D9BBAC00520B88 /* FastFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastFoodTests.swift; sourceTree = "<group>"; };
-		7619D2A819D9C41C00520B88 /* ReceiptCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptCell.swift; sourceTree = "<group>"; };
-		7619D2AA19D9C43400520B88 /* NutritionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionCell.swift; sourceTree = "<group>"; };
+		766040E919E432E900AB3BF8 /* NutritionGraphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionGraphs.swift; sourceTree = "<group>"; };
 		76A49D6919DC410F006091F3 /* FastFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastFood.swift; sourceTree = "<group>"; };
 		76B2F4B419DB0193009077F2 /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,10 +92,9 @@
 				7619D28B19D9BBAC00520B88 /* Images.xcassets */,
 				7619D28D19D9BBAC00520B88 /* LaunchScreen.xib */,
 				7619D28219D9BBAB00520B88 /* Supporting Files */,
-				7619D2A819D9C41C00520B88 /* ReceiptCell.swift */,
-				7619D2AA19D9C43400520B88 /* NutritionCell.swift */,
 				76B2F4B419DB0193009077F2 /* DatabaseConnection.swift */,
 				76A49D6919DC410F006091F3 /* FastFood.swift */,
+				766040E919E432E900AB3BF8 /* NutritionGraphs.swift */,
 			);
 			path = FastFood;
 			sourceTree = "<group>";
@@ -229,10 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7619D28719D9BBAC00520B88 /* ViewController.swift in Sources */,
+				766040EA19E432E900AB3BF8 /* NutritionGraphs.swift in Sources */,
 				76B2F4B519DB0193009077F2 /* DatabaseConnection.swift in Sources */,
 				7619D28519D9BBAC00520B88 /* AppDelegate.swift in Sources */,
-				7619D2AB19D9C43400520B88 /* NutritionCell.swift in Sources */,
-				7619D2A919D9C41C00520B88 /* ReceiptCell.swift in Sources */,
 				76A49D6A19DC410F006091F3 /* FastFood.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +357,7 @@
 				INFOPLIST_FILE = FastFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -371,6 +368,7 @@
 				INFOPLIST_FILE = FastFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
